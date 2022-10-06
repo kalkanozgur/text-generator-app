@@ -3,9 +3,9 @@ import { fetchApi } from "./api";
 
 export const getTextAsync = createAsyncThunk(
 	"text/getTextAsync",
-	async (numParas) => {
-		if (!numParas) numParas = 2;
-		return fetchApi(numParas);
+	async ({ paras, parasType }) => {
+		// console.log(paras, parasType);
+		return fetchApi(paras, parasType);
 	}
 );
 
@@ -14,6 +14,7 @@ const textSlice = createSlice({
 	initialState: {
 		text: [],
 		paras: 2,
+		parasType: "text",
 		isLoading: false,
 		error: null,
 	},
