@@ -1,8 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Selectors from "./components/Selectors";
 import TextContent from "./components/TextContent";
-import { fetchApi } from "./context/api";
 
 import { getTextAsync } from "./context/textSlice";
 
@@ -12,6 +11,7 @@ function App() {
 	const loremText = useSelector((state) => state.text.text);
 	useEffect(() => {
 		dispatch(getTextAsync());
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	return (
