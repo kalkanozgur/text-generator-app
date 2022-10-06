@@ -4,6 +4,6 @@
 
 @layer base {
 	body {
-		@apply bg-slate-700;
+		@apply bg-neutral-800 text-gray-50 flex flex-col p-4 mx-auto w-3/4;
 	}
 }
